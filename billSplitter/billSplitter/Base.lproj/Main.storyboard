@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="YSU-Yh-X0Z">
+                                <rect key="frame" x="18" y="253" width="564" height="31"/>
+                                <connections>
+                                    <action selector="updateFromSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="sJi-0Y-LIg"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxT-oU-id0">
+                                <rect key="frame" x="277" y="293" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="calculateSplitAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Typ-Av-A9z"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5e-GW-tfz">
+                                <rect key="frame" x="20" y="333" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haF-y5-M13">
+                                <rect key="frame" x="20" y="120" width="560" height="43"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Bill Splitter">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="36" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZfL-NB-vm6">
+                                <rect key="frame" x="20" y="213" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Wqc-Qn-xP1"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72941176470588232" green="0.71764705882352942" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="haF-y5-M13" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="64b-8y-2TX"/>
+                            <constraint firstItem="YSU-Yh-X0Z" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8Lz-va-MWD"/>
+                            <constraint firstItem="haF-y5-M13" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CbK-4s-ebQ"/>
+                            <constraint firstItem="YSU-Yh-X0Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DiS-vx-GzP"/>
+                            <constraint firstItem="ZfL-NB-vm6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H6i-Rc-hMX"/>
+                            <constraint firstItem="xxT-oU-id0" firstAttribute="top" secondItem="YSU-Yh-X0Z" secondAttribute="bottom" constant="10" id="JSw-7Q-VD6"/>
+                            <constraint firstItem="haF-y5-M13" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KGq-Im-2UB"/>
+                            <constraint firstItem="Y5e-GW-tfz" firstAttribute="top" secondItem="xxT-oU-id0" secondAttribute="bottom" constant="10" id="LIm-iQ-pCb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="haF-y5-M13" secondAttribute="trailing" id="Nj9-ds-aXI"/>
+                            <constraint firstItem="ZfL-NB-vm6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="T8m-4S-jmZ"/>
+                            <constraint firstItem="Y5e-GW-tfz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZTO-Gf-oVe"/>
+                            <constraint firstItem="Y5e-GW-tfz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a28-V2-4Ux"/>
+                            <constraint firstItem="YSU-Yh-X0Z" firstAttribute="top" secondItem="ZfL-NB-vm6" secondAttribute="bottom" constant="10" id="aFg-gf-hLT"/>
+                            <constraint firstItem="ZfL-NB-vm6" firstAttribute="top" secondItem="haF-y5-M13" secondAttribute="bottom" constant="50" id="fGV-SW-WKk"/>
+                            <constraint firstItem="ZfL-NB-vm6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fqT-yf-M7q"/>
+                            <constraint firstItem="Y5e-GW-tfz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hiG-fh-qUo"/>
+                            <constraint firstItem="xxT-oU-id0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m4Y-MF-sCA"/>
+                            <constraint firstItem="YSU-Yh-X0Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="npa-kV-VO9"/>
+                            <constraint firstItem="ZfL-NB-vm6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="yVf-gt-ECH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yVf-gt-ECH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="amountToPayPerPersonLabel" destination="Y5e-GW-tfz" id="Qv6-iK-Vg4"/>
+                        <outlet property="amountToPayTextField" destination="ZfL-NB-vm6" id="vtK-VH-3O8"/>
+                        <outlet property="numberOfPeopleSlider" destination="YSU-Yh-X0Z" id="KDU-mN-lRT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="243" y="339"/>
+        </scene>
+    </scenes>
+</document>
